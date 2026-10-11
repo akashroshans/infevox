@@ -1,0 +1,273 @@
+{
+  "user": {
+    "name": "Alex",
+    "role": "Super Admin",
+    "avatar": null
+  },
+  "stats": [
+    {
+      "id": "total-students",
+      "label": "Total Students",
+      "value": 5500,
+      "change": "+100%",
+      "active": 5000,
+      "inactive": 500,
+      "icon": "GraduationCap",
+      "bgColor": "bg-primary-100",
+      "iconColor": "text-primary-500"
+    },
+    {
+      "id": "total-branches",
+      "label": "Total Branches",
+      "value": 6,
+      "change": "+100%",
+      "active": 6,
+      "inactive": 0,
+      "icon": "Building2",
+      "bgColor": "bg-blue-100",
+      "iconColor": "text-blue-500"
+    },
+    {
+      "id": "total-courses",
+      "label": "Total Courses",
+      "value": 20,
+      "change": "+100%",
+      "active": 20,
+      "inactive": 0,
+      "icon": "BookOpen",
+      "bgColor": "bg-amber-100",
+      "iconColor": "text-amber-500"
+    },
+    {
+      "id": "total-staffs",
+      "label": "Total Staffs",
+      "value": 500,
+      "change": "+100%",
+      "active": 496,
+      "inactive": 4,
+      "icon": "Users",
+      "bgColor": "bg-rose-100",
+      "iconColor": "text-rose-500"
+    }
+  ],
+  "branchPerformance": {
+    "overallPercentage": 40,
+    "branches": [
+      { "name": "Branch 1", "value": 30, "color": "#7c3aed" },
+      { "name": "Branch 2", "value": 20, "color": "#3b82f6" },
+      { "name": "Branch 3", "value": 15, "color": "#f59e0b" },
+      { "name": "Branch 4", "value": 15, "color": "#ef4444" },
+      { "name": "Branch 5", "value": 10, "color": "#a855f7" },
+      { "name": "Branch 6", "value": 10, "color": "#22c55e" }
+    ]
+  },
+  "expenses": {
+    "totalSpent": 160000,
+    "monthly": [
+      { "month": "Jan", "amount": 8000 },
+      { "month": "Feb", "amount": 10000 },
+      { "month": "Mar", "amount": 7000 },
+      { "month": "Apr", "amount": 9000 },
+      { "month": "May", "amount": 12000 },
+      { "month": "Jun", "amount": 15000 }
+    ]
+  },
+  "overallIncome": [
+    { "month": "Jan", "income": 150000 },
+    { "month": "Feb", "income": 180000 },
+    { "month": "Mar", "income": 160000 },
+    { "month": "Apr", "income": 200000 },
+    { "month": "May", "income": 350000 },
+    { "month": "Jun", "income": 650000 }
+  ],
+  "recentActivity": [
+    {
+      "id": 1,
+      "type": "TUITION FEES",
+      "branch": "Branch 1",
+      "location": "Nagercoil",
+      "description": "Arun Kumar paid ₹15,000 tuition fees for the 2026-27 academic year.",
+      "icon": "IndianRupee",
+      "color": "bg-primary-100",
+      "iconColor": "text-primary-600"
+    },
+    {
+      "id": 2,
+      "type": "EXAM ADDED",
+      "branch": "Branch 5",
+      "location": "Marthandam",
+      "description": "Priya Staff added an exam for Rahul S in Mathematics.",
+      "icon": "FileText",
+      "color": "bg-blue-100",
+      "iconColor": "text-blue-600"
+    },
+    {
+      "id": 3,
+      "type": "UPDATED ATTENDANCE",
+      "branch": "Branch 2",
+      "location": "Thuckalay",
+      "description": "Karthik Staff updated the attendance record of Divya M.",
+      "icon": "ClipboardCheck",
+      "color": "bg-amber-100",
+      "iconColor": "text-amber-600"
+    },
+    {
+      "id": 4,
+      "type": "TUITION FEES",
+      "branch": "Branch 1",
+      "location": "Nagercoil",
+      "description": "Arun Kumar paid ₹15,000 tuition fees for the 2026-27 academic year.",
+      "icon": "IndianRupee",
+      "color": "bg-rose-100",
+      "iconColor": "text-rose-600"
+    },
+    {
+      "id": 5,
+      "type": "EXAM ADDED",
+      "branch": "Branch 5",
+      "location": "Marthandam",
+      "description": "Priya Staff added an exam for Rahul S in Mathematics.",
+      "icon": "FileText",
+      "color": "bg-green-100",
+      "iconColor": "text-green-600"
+    },
+    {
+      "id": 6,
+      "type": "UPDATED ATTENDANCE",
+      "branch": "Branch 2",
+      "location": "Thuckalay",
+      "description": "Karthik Staff updated the attendance record of Divya M.",
+      "icon": "ClipboardCheck",
+      "color": "bg-purple-100",
+      "iconColor": "text-purple-600"
+    }
+  ],
+  "sidebar": [
+    { "id": "dashboard", "label": "Dashboard", "icon": "LayoutDashboard" },
+    { "id": "branches", "label": "Branches", "icon": "Building2" },
+    { "id": "courses", "label": "Courses", "icon": "BookOpen" },
+    { "id": "finance", "label": "Finance", "icon": "Wallet" }
+  ],
+  "branches": {
+    "stats": [
+      {
+        "id": "total-branches",
+        "label": "TOTAL BRANCHES",
+        "value": "06",
+        "subtitle": "Across all locations",
+        "badge": "+100%",
+        "badgeColor": "text-primary-500",
+        "icon": "Building2",
+        "bgColor": "bg-primary-100",
+        "iconColor": "text-primary-500"
+      },
+      {
+        "id": "active-branches",
+        "label": "ACTIVE BRANCHES",
+        "value": "05",
+        "subtitle": "Currently operational",
+        "badge": "Operational",
+        "badgeColor": "text-success",
+        "icon": "CheckCircle2",
+        "bgColor": "bg-green-100",
+        "iconColor": "text-success"
+      },
+      {
+        "id": "total-students",
+        "label": "TOTAL STUDENTS",
+        "value": "5,500",
+        "subtitle": "Across all branches",
+        "badge": "Enrolled",
+        "badgeColor": "text-info",
+        "icon": "GraduationCap",
+        "bgColor": "bg-blue-100",
+        "iconColor": "text-info"
+      },
+      {
+        "id": "inactive-branches",
+        "label": "INACTIVE BRANCHES",
+        "value": "01",
+        "subtitle": "Not currently operational",
+        "badge": "Attention",
+        "badgeColor": "text-danger",
+        "icon": "AlertTriangle",
+        "bgColor": "bg-rose-100",
+        "iconColor": "text-danger"
+      }
+    ],
+    "list": [
+      {
+        "id": "br-001",
+        "name": "Nagercoil",
+        "type": "Main Campus",
+        "code": "BR-001",
+        "location": "Nagercoil, Tamil Nadu",
+        "students": 1250,
+        "staff": 45,
+        "status": "Active",
+        "avatarColor": "bg-primary-100 text-primary-600",
+        "initial": "N"
+      },
+      {
+        "id": "br-002",
+        "name": "Thuckalay",
+        "type": "City Branch",
+        "code": "BR-002",
+        "location": "Thuckalay, Tamil Nadu",
+        "students": 980,
+        "staff": 38,
+        "status": "Active",
+        "avatarColor": "bg-amber-100 text-amber-600",
+        "initial": "T"
+      },
+      {
+        "id": "br-003",
+        "name": "Marthandam",
+        "type": "West Campus",
+        "code": "BR-003",
+        "location": "Marthandam, Tamil Nadu",
+        "students": 1100,
+        "staff": 42,
+        "status": "Active",
+        "avatarColor": "bg-rose-100 text-rose-600",
+        "initial": "M"
+      },
+      {
+        "id": "br-004",
+        "name": "Kanyakumari",
+        "type": "Coastal Wing",
+        "code": "BR-004",
+        "location": "Kanyakumari, Tamil Nadu",
+        "students": 870,
+        "staff": 31,
+        "status": "Active",
+        "avatarColor": "bg-green-100 text-green-600",
+        "initial": "K"
+      },
+      {
+        "id": "br-005",
+        "name": "Colachel",
+        "type": "Sub Branch",
+        "code": "BR-005",
+        "location": "Colachel, Tamil Nadu",
+        "students": 800,
+        "staff": 26,
+        "status": "Active",
+        "avatarColor": "bg-blue-100 text-blue-600",
+        "initial": "C"
+      },
+      {
+        "id": "br-006",
+        "name": "Tirunelveli",
+        "type": "New Extension",
+        "code": "BR-006",
+        "location": "Tirunelveli, Tamil Nadu",
+        "students": 500,
+        "staff": 18,
+        "status": "Inactive",
+        "avatarColor": "bg-purple-100 text-purple-600",
+        "initial": "T"
+      }
+    ]
+  }
+}
