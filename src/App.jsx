@@ -3,6 +3,7 @@ import dashboardData from './data/dashboardData.json'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Dashboard'
 import Branches from './pages/Branches'
+import Courses from './pages/Courses'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
@@ -13,6 +14,8 @@ function App() {
         return <Dashboard />
       case 'branches':
         return <Branches />
+      case 'courses':
+        return <Courses />
       default:
         return <Dashboard />
     }
