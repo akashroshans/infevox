@@ -4,9 +4,15 @@ import Header from '../components/Header'
 import CourseStatCard from '../components/CourseStatCard'
 import CourseTable from '../components/CourseTable'
 
-export default function Courses() {
+export default function Courses({ onOpenDetail, onAdd }) {
   const { user } = dashboardData
   const { stats, filters, courses } = coursesData
+
+  // Clicking a particular course row opens its dynamic detail page
+  const handleOpen = (course) => {
+    if (!course) return
+    onOpenDetail?.(course)
+  }
 
   return (
     <div className="flex-1 p-8 overflow-y-auto">
@@ -27,12 +33,13 @@ export default function Courses() {
       </div>
 
       {/* Filter + Table (reusable, data-driven from coursesData.json) */}
+      {/* Row click / view / edit opens that course's dynamic detail. Add is separate. */}
       <CourseTable
         courses={courses}
         filters={filters}
-        onAdd={() => {}}
-        onView={() => {}}
-        onEdit={() => {}}
+        onAdd={onAdd}
+        onView={(course) => handleOpen(course)}
+        onEdit={(course) => handleOpen(course)}
         onDelete={() => {}}
       />
     </div>

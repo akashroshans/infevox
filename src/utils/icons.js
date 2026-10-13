@@ -38,6 +38,11 @@ import {
   Globe,
   Calculator,
   ShieldCheck,
+  ArrowLeft,
+  PencilLine,
+  UserCheck,
+  Layers,
+  Award,
 } from 'lucide-react'
 
 const iconMap = {
@@ -80,6 +85,11 @@ const iconMap = {
   Globe,
   Calculator,
   ShieldCheck,
+  ArrowLeft,
+  PencilLine,
+  UserCheck,
+  Layers,
+  Award,
 }
 
 export const getIcon = (name) => iconMap[name] || null
@@ -124,4 +134,9 @@ export {
   Globe,
   Calculator,
   ShieldCheck,
+  ArrowLeft,
+  PencilLine,
+  UserCheck,
+  Layers,
+  Award,
 }
