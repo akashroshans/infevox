@@ -21,9 +21,9 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function OverallIncomeChart({ data }) {
   return (
-    <div className="bg-surface-card rounded-2xl p-6 border border-primary-50 shadow-sm">
+    <div className="bg-surface-card rounded-2xl p-6 border border-primary-50 shadow-sm h-full flex flex-col">
       <h3 className="text-base font-bold text-text-primary mb-5">Overall Income</h3>
-      <div className="h-56">
+      <div className="flex-1 min-h-0" style={{ minHeight: '200px' }}>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

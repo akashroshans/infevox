@@ -4,7 +4,7 @@ function ActivityItem({ activity }) {
   const Icon = getIcon(activity.icon)
 
   return (
-    <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-primary-50/50 transition-all duration-200 group">
+    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-primary-50/60 transition-all duration-200 group hover:bg-primary-100/60">
       <div className={`w-10 h-10 rounded-xl ${activity.color} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200`}>
         {Icon && <Icon size={16} className={activity.iconColor} />}
       </div>
@@ -30,7 +30,7 @@ export default function RecentActivity({ activities }) {
           View All
         </button>
       </div>
-      <div className="flex-1 overflow-y-auto space-y-1 pr-1 -mr-1 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto space-y-2.5 pr-1 -mr-1 custom-scrollbar">
         {activities.map((activity) => (
           <ActivityItem key={activity.id} activity={activity} />
         ))}

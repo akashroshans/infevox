@@ -53,32 +53,92 @@
   "branchPerformance": {
     "overallPercentage": 40,
     "branches": [
-      { "name": "Branch 1", "value": 30, "color": "#7c3aed" },
-      { "name": "Branch 2", "value": 20, "color": "#3b82f6" },
-      { "name": "Branch 3", "value": 15, "color": "#f59e0b" },
-      { "name": "Branch 4", "value": 15, "color": "#ef4444" },
-      { "name": "Branch 5", "value": 10, "color": "#a855f7" },
-      { "name": "Branch 6", "value": 10, "color": "#22c55e" }
+      {
+        "name": "Branch 1",
+        "value": 30,
+        "color": "#7c3aed"
+      },
+      {
+        "name": "Branch 2",
+        "value": 20,
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Branch 3",
+        "value": 15,
+        "color": "#f59e0b"
+      },
+      {
+        "name": "Branch 4",
+        "value": 15,
+        "color": "#ef4444"
+      },
+      {
+        "name": "Branch 5",
+        "value": 10,
+        "color": "#a855f7"
+      },
+      {
+        "name": "Branch 6",
+        "value": 10,
+        "color": "#22c55e"
+      }
     ]
   },
   "expenses": {
     "totalSpent": 160000,
     "monthly": [
-      { "month": "Jan", "amount": 8000 },
-      { "month": "Feb", "amount": 10000 },
-      { "month": "Mar", "amount": 7000 },
-      { "month": "Apr", "amount": 9000 },
-      { "month": "May", "amount": 12000 },
-      { "month": "Jun", "amount": 15000 }
+      {
+        "month": "Jan",
+        "amount": 8000
+      },
+      {
+        "month": "Feb",
+        "amount": 10000
+      },
+      {
+        "month": "Mar",
+        "amount": 7000
+      },
+      {
+        "month": "Apr",
+        "amount": 9000
+      },
+      {
+        "month": "May",
+        "amount": 12000
+      },
+      {
+        "month": "Jun",
+        "amount": 15000
+      }
     ]
   },
   "overallIncome": [
-    { "month": "Jan", "income": 150000 },
-    { "month": "Feb", "income": 180000 },
-    { "month": "Mar", "income": 160000 },
-    { "month": "Apr", "income": 200000 },
-    { "month": "May", "income": 350000 },
-    { "month": "Jun", "income": 650000 }
+    {
+      "month": "Jan",
+      "income": 150000
+    },
+    {
+      "month": "Feb",
+      "income": 180000
+    },
+    {
+      "month": "Mar",
+      "income": 160000
+    },
+    {
+      "month": "Apr",
+      "income": 200000
+    },
+    {
+      "month": "May",
+      "income": 350000
+    },
+    {
+      "month": "Jun",
+      "income": 650000
+    }
   ],
   "recentActivity": [
     {
@@ -143,10 +203,26 @@
     }
   ],
   "sidebar": [
-    { "id": "dashboard", "label": "Dashboard", "icon": "LayoutDashboard" },
-    { "id": "branches", "label": "Branches", "icon": "Building2" },
-    { "id": "courses", "label": "Courses", "icon": "BookOpen" },
-    { "id": "finance", "label": "Finance", "icon": "Wallet" }
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "id": "branches",
+      "label": "Branches",
+      "icon": "Building2"
+    },
+    {
+      "id": "courses",
+      "label": "Courses",
+      "icon": "BookOpen"
+    },
+    {
+      "id": "finance",
+      "label": "Finance",
+      "icon": "Wallet"
+    }
   ],
   "branches": {
     "stats": [
