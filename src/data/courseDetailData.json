@@ -1,0 +1,140 @@
+{
+  "courseId": "crs-003",
+  "breadcrumb": ["Courses", "Full Stack Web Development"],
+  "title": "Full Stack Web Development",
+  "subtitle": "Manage course information, modules, enrolled students and assigned staff across your institute.",
+  "status": "Active",
+  "publication": "Published",
+  "stats": [
+    {
+      "id": "enrolled-students",
+      "label": "Enrolled Students",
+      "value": "340",
+      "subtitle": "Active learners",
+      "badge": "+12%",
+      "badgeColor": "text-success",
+      "badgeBg": "bg-green-50",
+      "icon": "Users",
+      "bgColor": "bg-primary-100",
+      "iconColor": "text-primary-500"
+    },
+    {
+      "id": "course-modules",
+      "label": "Course Modules",
+      "value": "12",
+      "subtitle": "8 Approved • 4 in Progress",
+      "badge": "Full Track",
+      "badgeColor": "text-primary-500",
+      "badgeBg": "bg-primary-50",
+      "icon": "BookOpen",
+      "bgColor": "bg-primary-100",
+      "iconColor": "text-primary-500"
+    },
+    {
+      "id": "assigned-staff",
+      "label": "Assigned Staff",
+      "value": "4",
+      "subtitle": "3 Instructors • 1 TA",
+      "badge": "Faculty",
+      "badgeColor": "text-info",
+      "badgeBg": "bg-blue-50",
+      "icon": "UserCheck",
+      "bgColor": "bg-blue-100",
+      "iconColor": "text-info"
+    },
+    {
+      "id": "course-duration",
+      "label": "Course Duration",
+      "value": "8 Months",
+      "subtitle": "Full Schedule",
+      "badge": "32 Weeks",
+      "badgeColor": "text-warning",
+      "badgeBg": "bg-amber-50",
+      "icon": "Clock",
+      "bgColor": "bg-amber-100",
+      "iconColor": "text-warning"
+    }
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview" },
+    { "id": "modules", "label": "Modules", "count": 12 },
+    { "id": "students", "label": "Students", "count": 340 },
+    { "id": "staff", "label": "Staff", "count": 4 }
+  ],
+  "information": {
+    "title": "Course Information",
+    "subtitle": "Primary course specification and parameters",
+    "actionLabel": "Edit Information",
+    "fields": [
+      { "id": "title", "label": "Course Title", "value": "Full Stack Web Development", "type": "text" },
+      { "id": "category", "label": "Category", "value": "Programming", "type": "pill", "pillColor": "bg-primary-50 text-primary-600" },
+      { "id": "duration", "label": "Duration", "value": "8 Months (32 Weeks)", "type": "text" },
+      { "id": "fee", "label": "Course Fee", "value": "₹45,000", "type": "textStrong" },
+      { "id": "status", "label": "Status", "value": "Active", "type": "dot", "dotColor": "bg-success", "textColor": "text-text-primary" },
+      { "id": "publication", "label": "Publication", "value": "Published & Enrolling", "type": "dot", "dotColor": "bg-info", "textColor": "text-text-primary" },
+      { "id": "level", "label": "Target Level", "value": "Beginner to Advanced", "type": "text" },
+      { "id": "certification", "label": "Certification", "value": "Issued on Completion", "type": "dot", "dotColor": "bg-warning", "textColor": "text-text-primary" }
+    ]
+  },
+  "curriculum": {
+    "title": "Academic Structure & Curriculum Breakdown",
+    "subtitle": "High-level architectural milestones",
+    "badge": "3 Tracks",
+    "tracks": [
+      {
+        "id": "track-1",
+        "number": 1,
+        "numberColor": "bg-primary-500",
+        "title": "Frontend Development Core",
+        "modulesLabel": "4 Modules",
+        "modulesColor": "bg-primary-50 text-primary-600",
+        "description": "Modern HTML5 semantic design, CSS3 flexbox/grid, modern JavaScript (ES6+), and single-page apps with React.",
+        "tags": ["HTML5 / CSS3", "ES6+ JavaScript", "React.js", "Tailwind CSS"]
+      },
+      {
+        "id": "track-2",
+        "number": 2,
+        "numberColor": "bg-info",
+        "title": "Backend Architecture & APIs",
+        "modulesLabel": "4 Modules",
+        "modulesColor": "bg-blue-50 text-blue-600",
+        "description": "Server runtime environment with Node.js, Express microservices, RESTful API architecture, JWT authentication, and authorization flows.",
+        "tags": ["Node.js", "Express", "REST APIs", "OAuth / JWT"]
+      },
+      {
+        "id": "track-3",
+        "number": 3,
+        "numberColor": "bg-success",
+        "title": "Databases, DevOps & Production Deployment",
+        "modulesLabel": "4 Modules",
+        "modulesColor": "bg-green-50 text-green-600",
+        "description": "Relational and Document databases, query optimization, Docker containers, CI/CD pipeline deployment, and Cyber security and Production behavior.",
+        "tags": ["PostgreSQL", "MongoDB", "Docker", "CI / CD"]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Recent Course Activity",
+    "subtitle": "Audit log of course updates & milestones",
+    "items": [
+      {
+        "id": 1,
+        "title": "Module 08: REST API Development updated",
+        "description": "By Dr. Alex Mercer • 2 hours ago",
+        "color": "bg-primary-500"
+      },
+      {
+        "id": 2,
+        "title": "New student batch enrolled",
+        "description": "35 students added to Cohort Fall 2026 • 1 day ago",
+        "color": "bg-success"
+      },
+      {
+        "id": 3,
+        "title": "Course syllabus publication renewed",
+        "description": "Automated certification approval check passed • 3 days ago",
+        "color": "bg-info"
+      }
+    ]
+  }
+}

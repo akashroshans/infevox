@@ -1,12 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import dashboardData from '../data/dashboardData.json'
 import coursesData from '../data/coursesData.json'
 import Header from '../components/Header'
 import CourseStatCard from '../components/CourseStatCard'
 import CourseTable from '../components/CourseTable'
 
-export default function Courses() {
+export default function Courses({ onAdd }) {
+  const navigate = useNavigate()
   const { user } = dashboardData
   const { stats, filters, courses } = coursesData
+
+  // Clicking a particular course row routes to its dynamic detail endpoint
+  const handleOpen = (course) => {
+    if (!course) return
+    navigate(`/courses/${course.id}`)
+  }
 
   return (
     <div className="flex-1 p-8 overflow-y-auto">
@@ -27,12 +35,13 @@ export default function Courses() {
       </div>
 
       {/* Filter + Table (reusable, data-driven from coursesData.json) */}
+      {/* Row click / view / edit routes to /courses/:courseId. Add is separate. */}
       <CourseTable
         courses={courses}
         filters={filters}
-        onAdd={() => {}}
-        onView={() => {}}
-        onEdit={() => {}}
+        onAdd={onAdd}
+        onView={(course) => handleOpen(course)}
+        onEdit={(course) => handleOpen(course)}
         onDelete={() => {}}
       />
     </div>

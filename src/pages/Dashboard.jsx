@@ -23,12 +23,17 @@ export default function Dashboard() {
 
       {/* Charts Row: Branch Performance + Expenses + Recent Activity */}
       <div className="grid grid-cols-12 gap-5 mb-6">
+        {/* Branch Performance - 4 cols */}
         <div className="col-span-4">
           <BranchPerformanceChart data={branchPerformance} />
         </div>
+
+        {/* Expenses - 4 cols */}
         <div className="col-span-4">
           <ExpensesChart data={expenses} />
         </div>
+
+        {/* Recent Activity - 4 cols, spans 2 rows */}
         <div className="col-span-4 row-span-2">
           <RecentActivity activities={recentActivity} />
         </div>

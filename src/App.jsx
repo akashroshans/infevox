@@ -1,37 +1,30 @@
-import { useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import dashboardData from './data/dashboardData.json'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Dashboard'
 import Branches from './pages/Branches'
 import Courses from './pages/Courses'
+import CourseDetail from './pages/CourseDetail'
+import Finance from './pages/Finance'
 
 function App() {
-  const [activePage, setActivePage] = useState('dashboard')
-
-  const renderPage = () => {
-    switch (activePage) {
-      case 'dashboard':
-        return <Dashboard />
-      case 'branches':
-        return <Branches />
-      case 'courses':
-        return <Courses />
-      default:
-        return <Dashboard />
-    }
-  }
-
   return (
-    <div className="flex min-h-screen bg-surface">
-      <Sidebar
-        items={dashboardData.sidebar}
-        activePage={activePage}
-        onNavigate={setActivePage}
-      />
-      <main className="ml-56 flex-1 flex flex-col">
-        {renderPage()}
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="flex min-h-screen bg-surface">
+        <Sidebar items={dashboardData.sidebar} />
+        <main className="ml-56 flex-1 flex flex-col">
+          <Routes>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/branches" element={<Branches />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/courses/:courseId" element={<CourseDetail />} />
+            <Route path="/finance" element={<Finance />} />
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   )
 }
 

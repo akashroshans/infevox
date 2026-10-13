@@ -69,24 +69,28 @@ function StatusBadge({ status }) {
 }
 
 function ActionButtons({ onView, onEdit, onDelete }) {
+  const stop = (fn) => (e) => {
+    e.stopPropagation()
+    fn?.(e)
+  }
   return (
     <div className="flex items-center justify-center gap-1">
       <button
-        onClick={onView}
+        onClick={stop(onView)}
         title="View"
         className="w-8 h-8 rounded-lg hover:bg-primary-50 flex items-center justify-center text-text-muted hover:text-primary-500 transition-all duration-200 cursor-pointer"
       >
         <Eye size={15} />
       </button>
       <button
-        onClick={onEdit}
+        onClick={stop(onEdit)}
         title="Edit"
         className="w-8 h-8 rounded-lg hover:bg-primary-50 flex items-center justify-center text-text-muted hover:text-primary-500 transition-all duration-200 cursor-pointer"
       >
         <Pencil size={15} />
       </button>
       <button
-        onClick={onDelete}
+        onClick={stop(onDelete)}
         title="Delete"
         className="w-8 h-8 rounded-lg hover:bg-red-50 flex items-center justify-center text-text-muted hover:text-danger transition-all duration-200 cursor-pointer"
       >
@@ -218,7 +222,9 @@ export default function CourseTable({
                 return (
                   <tr
                     key={course.id}
-                    className="border-b border-primary-50/50 hover:bg-primary-50/30 transition-colors duration-150 group last:border-b-0"
+                    onClick={() => onView?.(course)}
+                    title={`Open ${course.name}`}
+                    className="border-b border-primary-50/50 hover:bg-primary-50/30 transition-colors duration-150 group last:border-b-0 cursor-pointer"
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
@@ -226,7 +232,7 @@ export default function CourseTable({
                           {CourseIcon && <CourseIcon size={16} />}
                         </div>
                         <div className="min-w-0">
-                          <p className="text-sm font-semibold text-text-primary truncate">{course.name}</p>
+                          <p className="text-sm font-semibold text-text-primary truncate group-hover:text-primary-600 transition-colors">{course.name}</p>
                           <p className="text-xs text-text-muted truncate max-w-[240px]">{course.description}</p>
                         </div>
                       </div>
