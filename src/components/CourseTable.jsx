@@ -326,7 +326,7 @@ export default function CourseTable({
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={safePage >= totalPages}
                 className="w-8 h-8 rounded-lg border border-primary-100 flex items-center justify-center text-text-muted hover:bg-primary-50 hover:text-primary-500 transition-all duration-200 cursor-pointer disabled:opacity-40"
-              >
+             >
                 <ChevronRight size={14} />
               </button>
             </div>
