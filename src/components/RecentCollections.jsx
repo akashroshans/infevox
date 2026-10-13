@@ -53,6 +53,11 @@ export default function RecentCollections({ data, onViewAll }) {
             </div>
           </div>
         ))}
+        {(data.items || []).length === 0 && (
+          <p className="text-sm text-text-muted text-center py-8">
+            No collections match the selected filters.
+          </p>
+        )}
       </div>
 
       <button

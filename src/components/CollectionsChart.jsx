@@ -30,6 +30,12 @@ export default function CollectionsChart({ data }) {
   if (!data) return null
 
   const chartData = mode === 'Monthly' ? data.monthly : data.quarterly
+  // A one-point window (e.g. Last Month = Apr only) can't draw an area — show dots instead
+  const singlePoint = chartData.length === 1
+  const dotProps = (color) =>
+    singlePoint
+      ? { fill: color, strokeWidth: 2, stroke: '#fff', r: 5 }
+      : false
 
   return (
     <div className="bg-surface-card rounded-2xl p-6 border border-primary-50 shadow-sm h-full flex flex-col">
@@ -100,7 +106,7 @@ export default function CollectionsChart({ data }) {
               stroke="#7c3aed"
               strokeWidth={2.5}
               fill="url(#feeGradient)"
-              dot={false}
+              dot={dotProps('#7c3aed')}
               activeDot={{ fill: '#7c3aed', strokeWidth: 2, stroke: '#fff', r: 5 }}
             />
             <Area
@@ -110,7 +116,7 @@ export default function CollectionsChart({ data }) {
               stroke="#3b82f6"
               strokeWidth={2}
               fill="url(#otherGradient)"
-              dot={false}
+              dot={dotProps('#3b82f6')}
               activeDot={{ fill: '#3b82f6', strokeWidth: 2, stroke: '#fff', r: 4 }}
             />
           </AreaChart>

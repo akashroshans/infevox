@@ -1,10 +1,21 @@
 {
   "tabs": ["Overview", "Fee Collections", "Outstanding Fees", "Expenses", "Transactions", "Financial Reports"],
   "filters": {
-    "academicYears": ["AY 2026-2027", "AY 2025-2026", "AY 2024-2025"],
-    "branches": ["All Branches (6)", "Nagercoil", "Thuckalay", "Marthandam", "Kanyakumari", "Colachel", "Tirunelveli"],
-    "periods": ["This Month (May 2026)", "Last Month (Apr 2026)", "Last 3 Months", "Last 6 Months", "This Year"]
+    "branches": ["All Branches (6)", "Nagercoil", "Thuckalay", "Marthandam", "Kanyakumari", "Colachel", "Tirunelveli"]
   },
+  "academicYears": [
+    { "id": "ay-2026", "label": "AY 2026-2027", "factor": 1 },
+    { "id": "ay-2025", "label": "AY 2025-2026", "factor": 0.87 },
+    { "id": "ay-2024", "label": "AY 2024-2025", "factor": 0.74 }
+  ],
+  "periods": [
+    { "id": "this-month", "label": "This Month (May 2026)", "shortLabel": "May 2026", "statsEnd": 1, "chartSlice": [0, 1], "filterMonths": [1] },
+    { "id": "last-month", "label": "Last Month (Apr 2026)", "shortLabel": "Apr 2026", "statsEnd": 0, "chartSlice": [0, 0], "filterMonths": [0] },
+    { "id": "last-3", "label": "Last 3 Months", "shortLabel": "Last 3 months", "statsEnd": 11, "chartSlice": [9, 11], "filterMonths": [11, 0, 1] },
+    { "id": "last-6", "label": "Last 6 Months", "shortLabel": "Last 6 months", "statsEnd": 11, "chartSlice": [6, 11], "filterMonths": [8, 9, 10, 11, 0, 1] },
+    { "id": "this-year", "label": "This Year", "shortLabel": "FY 2026-27 total", "statsEnd": 11, "chartSlice": [0, 11], "filterMonths": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+  ],
+  "outstandingStudents": 24,
   "stats": [
     {
       "id": "total-collections",
@@ -191,6 +202,8 @@
         "studentId": "STD-011",
         "initial": "A",
         "avatarColor": "bg-primary-100 text-primary-600",
+        "branch": "Nagercoil",
+        "month": 1,
         "meta": "Nagercoil • Course Fee • UPI • Today, 12:40 AM",
         "amount": 6000,
         "status": "Completed"
@@ -201,6 +214,8 @@
         "studentId": "STD-042",
         "initial": "P",
         "avatarColor": "bg-blue-100 text-blue-600",
+        "branch": "Thuckalay",
+        "month": 1,
         "meta": "Thuckalay • Semester Fee • Bank Transfer • Yesterday, 10:20 PM",
         "amount": 18000,
         "status": "Completed"
@@ -211,6 +226,8 @@
         "studentId": "STD-108",
         "initial": "R",
         "avatarColor": "bg-amber-100 text-amber-600",
+        "branch": "Marthandam",
+        "month": 1,
         "meta": "Marthandam • Admission Fee • Cash • 18 May 2026",
         "amount": 10000,
         "status": "Pending"
@@ -221,9 +238,47 @@
         "studentId": "STD-115",
         "initial": "D",
         "avatarColor": "bg-rose-100 text-rose-600",
+        "branch": "Nagercoil",
+        "month": 1,
         "meta": "Nagercoil • Course Fee • Cash • 17 May 2026",
         "amount": 22000,
         "status": "Failed"
+      },
+      {
+        "id": "txn-005",
+        "student": "Karthik S",
+        "studentId": "STD-098",
+        "initial": "K",
+        "avatarColor": "bg-green-100 text-green-600",
+        "branch": "Nagercoil",
+        "month": 0,
+        "meta": "Nagercoil • Course Fee • Bank Transfer • 28 Apr 2026",
+        "amount": 12000,
+        "status": "Completed"
+      },
+      {
+        "id": "txn-006",
+        "student": "Arjun V",
+        "studentId": "STD-130",
+        "initial": "A",
+        "avatarColor": "bg-purple-100 text-purple-600",
+        "branch": "Kanyakumari",
+        "month": 1,
+        "meta": "Kanyakumari • Course Fee • UPI • 16 May 2026",
+        "amount": 14000,
+        "status": "Completed"
+      },
+      {
+        "id": "txn-007",
+        "student": "Sneha R",
+        "studentId": "STD-141",
+        "initial": "S",
+        "avatarColor": "bg-amber-100 text-amber-600",
+        "branch": "Colachel",
+        "month": 1,
+        "meta": "Colachel • Semester Fee • Cash • 15 May 2026",
+        "amount": 9000,
+        "status": "Pending"
       }
     ]
   },
@@ -237,10 +292,10 @@
     "auditTitle": "FINANCIAL AUDIT LOG",
     "auditSubtitle": "Latest Update",
     "auditLog": [
-      { "id": 1, "text": "Payment of ₹18,000 confirmed via UPI", "color": "bg-success" },
-      { "id": 2, "text": "Expense voucher of ₹45,000 approved for Lab Equipment", "color": "bg-info" },
-      { "id": 3, "text": "Marthandam Branch monthly audit log published", "color": "bg-primary-500" },
-      { "id": 4, "text": "Payment gateway alert: 1 transaction failed rectification", "color": "bg-danger" }
+      { "id": 1, "text": "Payment of ₹18,000 confirmed via UPI", "color": "bg-success", "branch": null },
+      { "id": 2, "text": "Expense voucher of ₹45,000 approved for Lab Equipment", "color": "bg-info", "branch": null },
+      { "id": 3, "text": "Marthandam Branch monthly audit log published", "color": "bg-primary-500", "branch": "Marthandam" },
+      { "id": 4, "text": "Payment gateway alert: 1 transaction failed rectification", "color": "bg-danger", "branch": null }
     ],
     "remindLabel": "Send Fee Reminders (24 Students)"
   }

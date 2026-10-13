@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import dashboardData from '../data/dashboardData.json'
 import financeData from '../data/financeData.json'
+import { getFilteredFinance } from '../utils/financeFilter'
 import Header from '../components/Header'
 import FinanceTabs from '../components/FinanceTabs'
 import FinanceStatCard from '../components/FinanceStatCard'
@@ -37,9 +38,15 @@ function FilterSelect({ value, onChange, options }) {
 export default function Finance() {
   const { user } = dashboardData
   const [activeTab, setActiveTab] = useState(financeData.tabs[0])
-  const [academicYear, setAcademicYear] = useState(financeData.filters.academicYears[0])
+  const [academicYear, setAcademicYear] = useState(financeData.academicYears[0].label)
   const [branch, setBranch] = useState(financeData.filters.branches[0])
-  const [period, setPeriod] = useState(financeData.filters.periods[0])
+  const [period, setPeriod] = useState(financeData.periods[0].label)
+
+  // Every section below derives from the selected AY + branch + period
+  const view = useMemo(
+    () => getFilteredFinance(financeData, { academicYearLabel: academicYear, branchLabel: branch, periodLabel: period }),
+    [academicYear, branch, period]
+  )
 
   return (
     <div className="flex-1 p-8 overflow-y-auto">
@@ -59,9 +66,17 @@ export default function Finance() {
         <>
           {/* Filter bar */}
           <div className="bg-surface-card rounded-2xl border border-primary-50 shadow-sm px-5 py-4 flex flex-wrap items-center gap-3 mb-6">
-            <FilterSelect value={academicYear} onChange={setAcademicYear} options={financeData.filters.academicYears} />
+            <FilterSelect
+              value={academicYear}
+              onChange={setAcademicYear}
+              options={financeData.academicYears.map((y) => y.label)}
+            />
             <FilterSelect value={branch} onChange={setBranch} options={financeData.filters.branches} />
-            <FilterSelect value={period} onChange={setPeriod} options={financeData.filters.periods} />
+            <FilterSelect
+              value={period}
+              onChange={setPeriod}
+              options={financeData.periods.map((p) => p.label)}
+            />
             <div className="flex-1" />
             <button className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-primary-600 bg-primary-50 rounded-xl hover:bg-primary-100 transition-all duration-200 cursor-pointer whitespace-nowrap">
               <Download size={15} />
@@ -75,7 +90,7 @@ export default function Finance() {
 
           {/* Stats row */}
           <div className="grid grid-cols-4 gap-5 mb-6">
-            {financeData.stats.map((stat) => (
+            {view.stats.map((stat) => (
               <FinanceStatCard key={stat.id} stat={stat} />
             ))}
           </div>
@@ -83,25 +98,25 @@ export default function Finance() {
           {/* Charts row */}
           <div className="grid grid-cols-12 gap-5 mb-6">
             <div className="col-span-7">
-              <CollectionsChart data={financeData.collectionsOverview} />
+              <CollectionsChart data={view.collections} />
             </div>
             <div className="col-span-5">
-              <ExpenseBreakdown data={financeData.expenseBreakdown} />
+              <ExpenseBreakdown data={view.expenses} />
             </div>
           </div>
 
           {/* Branch summary */}
           <div className="mb-6">
-            <BranchFinanceTable data={financeData.branchSummary} />
+            <BranchFinanceTable data={view.branchTable} />
           </div>
 
           {/* Bottom row */}
           <div className="grid grid-cols-12 gap-5">
             <div className="col-span-7">
-              <RecentCollections data={financeData.recentCollections} />
+              <RecentCollections data={view.recent} />
             </div>
             <div className="col-span-5">
-              <OutstandingSnapshot data={financeData.outstandingSnapshot} />
+              <OutstandingSnapshot data={view.outstanding} />
             </div>
           </div>
         </>
