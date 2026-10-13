@@ -1,0 +1,247 @@
+{
+  "tabs": ["Overview", "Fee Collections", "Outstanding Fees", "Expenses", "Transactions", "Financial Reports"],
+  "filters": {
+    "academicYears": ["AY 2026-2027", "AY 2025-2026", "AY 2024-2025"],
+    "branches": ["All Branches (6)", "Nagercoil", "Thuckalay", "Marthandam", "Kanyakumari", "Colachel", "Tirunelveli"],
+    "periods": ["This Month (May 2026)", "Last Month (Apr 2026)", "Last 3 Months", "Last 6 Months", "This Year"]
+  },
+  "stats": [
+    {
+      "id": "total-collections",
+      "label": "Total Collections",
+      "value": "₹48,50,000",
+      "subtitle": "Across all branches",
+      "badge": "+12.5%",
+      "badgeColor": "text-success",
+      "badgeBg": "bg-green-50",
+      "icon": "Wallet",
+      "bgColor": "bg-primary-100",
+      "iconColor": "text-primary-500"
+    },
+    {
+      "id": "outstanding-fees",
+      "label": "Outstanding Fees",
+      "value": "₹8,75,000",
+      "subtitle": "Pending student payments",
+      "badge": "24 Students",
+      "badgeColor": "text-warning",
+      "badgeBg": "bg-amber-50",
+      "icon": "Clock",
+      "bgColor": "bg-amber-100",
+      "iconColor": "text-warning"
+    },
+    {
+      "id": "total-expenses",
+      "label": "Total Expenses",
+      "value": "₹12,40,000",
+      "subtitle": "Current month",
+      "badge": "25.6% of collections",
+      "badgeColor": "text-danger",
+      "badgeBg": "bg-red-50",
+      "icon": "BarChart3",
+      "bgColor": "bg-rose-100",
+      "iconColor": "text-danger"
+    },
+    {
+      "id": "net-balance",
+      "label": "Net Balance",
+      "value": "₹36,10,000",
+      "subtitle": "Collections minus expenses",
+      "badge": "Healthy reserve",
+      "badgeColor": "text-success",
+      "badgeBg": "bg-green-50",
+      "icon": "TrendingUp",
+      "bgColor": "bg-green-100",
+      "iconColor": "text-success"
+    }
+  ],
+  "collectionsOverview": {
+    "title": "Collections Overview",
+    "subtitle": "Track student fee collections over time",
+    "legend": [
+      { "label": "Fee Collections (₹48.5L)", "color": "#7c3aed" },
+      { "label": "Other Income (₹3.2L)", "color": "#3b82f6" }
+    ],
+    "monthly": [
+      { "month": "Apr", "feeCollections": 2200000, "otherIncome": 240000 },
+      { "month": "May", "feeCollections": 2550000, "otherIncome": 260000 },
+      { "month": "Jun", "feeCollections": 2400000, "otherIncome": 230000 },
+      { "month": "Jul", "feeCollections": 2850000, "otherIncome": 270000 },
+      { "month": "Aug", "feeCollections": 3050000, "otherIncome": 250000 },
+      { "month": "Sep", "feeCollections": 3300000, "otherIncome": 290000 },
+      { "month": "Oct", "feeCollections": 3600000, "otherIncome": 280000 },
+      { "month": "Nov", "feeCollections": 4000000, "otherIncome": 300000 },
+      { "month": "Dec", "feeCollections": 4300000, "otherIncome": 310000 },
+      { "month": "Jan", "feeCollections": 4500000, "otherIncome": 295000 },
+      { "month": "Feb", "feeCollections": 4700000, "otherIncome": 305000 },
+      { "month": "Mar", "feeCollections": 4850000, "otherIncome": 320000 }
+    ],
+    "quarterly": [
+      { "month": "Q1", "feeCollections": 7150000, "otherIncome": 730000 },
+      { "month": "Q2", "feeCollections": 9200000, "otherIncome": 810000 },
+      { "month": "Q3", "feeCollections": 11900000, "otherIncome": 890000 },
+      { "month": "Q4", "feeCollections": 14050000, "otherIncome": 920000 }
+    ]
+  },
+  "expenseBreakdown": {
+    "title": "Expense Breakdown",
+    "subtitle": "Understand how institute funds are spent",
+    "actionLabel": "Details",
+    "total": 1240000,
+    "totalLabel": "₹12.4L",
+    "monthlyCap": 1500000,
+    "monthlyCapLabel": "₹15,00,000",
+    "categories": [
+      { "name": "Staff Salaries", "amount": 510000, "color": "#3b82f6" },
+      { "name": "Infrastructure", "amount": 275000, "color": "#7c3aed" },
+      { "name": "Academic Resources", "amount": 185000, "color": "#f59e0b" },
+      { "name": "Utilities & Maint.", "amount": 145000, "color": "#22c55e" },
+      { "name": "Admin & Other", "amount": 125000, "color": "#ef4444" }
+    ]
+  },
+  "branchSummary": {
+    "title": "Branch-wise Financial Summary",
+    "subtitle": "Compare revenue and outstanding dues across all branches",
+    "exportLabel": "Export CSV",
+    "searchPlaceholder": "Search branch...",
+    "branches": [
+      {
+        "id": "br-001",
+        "name": "Nagercoil",
+        "initial": "N",
+        "avatarColor": "bg-primary-100 text-primary-600",
+        "students": 1250,
+        "feesExpected": 1800000,
+        "feesCollected": 1650000,
+        "outstanding": 150000,
+        "expenses": 130000,
+        "netBalance": 1520000
+      },
+      {
+        "id": "br-002",
+        "name": "Thuckalay",
+        "initial": "T",
+        "avatarColor": "bg-blue-100 text-blue-600",
+        "students": 950,
+        "feesExpected": 1200000,
+        "feesCollected": 1020000,
+        "outstanding": 180000,
+        "expenses": 120000,
+        "netBalance": 900000
+      },
+      {
+        "id": "br-003",
+        "name": "Marthandam",
+        "initial": "M",
+        "avatarColor": "bg-amber-100 text-amber-600",
+        "students": 1100,
+        "feesExpected": 1450000,
+        "feesCollected": 1290000,
+        "outstanding": 160000,
+        "expenses": 110000,
+        "netBalance": 1180000
+      },
+      {
+        "id": "br-004",
+        "name": "Kanyakumari",
+        "initial": "K",
+        "avatarColor": "bg-green-100 text-green-600",
+        "students": 870,
+        "feesExpected": 950000,
+        "feesCollected": 810000,
+        "outstanding": 140000,
+        "expenses": 105000,
+        "netBalance": 705000
+      },
+      {
+        "id": "br-005",
+        "name": "Colachel",
+        "initial": "C",
+        "avatarColor": "bg-rose-100 text-rose-600",
+        "students": 800,
+        "feesExpected": 725000,
+        "feesCollected": 610000,
+        "outstanding": 115000,
+        "expenses": 120000,
+        "netBalance": 490000
+      },
+      {
+        "id": "br-006",
+        "name": "Tirunelveli",
+        "initial": "T",
+        "avatarColor": "bg-purple-100 text-purple-600",
+        "students": 500,
+        "feesExpected": 400000,
+        "feesCollected": 310000,
+        "outstanding": 90000,
+        "expenses": 105000,
+        "netBalance": 205000
+      }
+    ]
+  },
+  "recentCollections": {
+    "title": "Recent Fee Collections",
+    "subtitle": "Real-time student payment activity",
+    "viewAllLabel": "View All (142)",
+    "downloadLabel": "Download Complete Transactions List",
+    "items": [
+      {
+        "id": "txn-001",
+        "student": "Arun Kumar",
+        "studentId": "STD-011",
+        "initial": "A",
+        "avatarColor": "bg-primary-100 text-primary-600",
+        "meta": "Nagercoil • Course Fee • UPI • Today, 12:40 AM",
+        "amount": 6000,
+        "status": "Completed"
+      },
+      {
+        "id": "txn-002",
+        "student": "Priya S",
+        "studentId": "STD-042",
+        "initial": "P",
+        "avatarColor": "bg-blue-100 text-blue-600",
+        "meta": "Thuckalay • Semester Fee • Bank Transfer • Yesterday, 10:20 PM",
+        "amount": 18000,
+        "status": "Completed"
+      },
+      {
+        "id": "txn-003",
+        "student": "Rahul M",
+        "studentId": "STD-108",
+        "initial": "R",
+        "avatarColor": "bg-amber-100 text-amber-600",
+        "meta": "Marthandam • Admission Fee • Cash • 18 May 2026",
+        "amount": 10000,
+        "status": "Pending"
+      },
+      {
+        "id": "txn-004",
+        "student": "Divya D",
+        "studentId": "STD-115",
+        "initial": "D",
+        "avatarColor": "bg-rose-100 text-rose-600",
+        "meta": "Nagercoil • Course Fee • Cash • 17 May 2026",
+        "amount": 22000,
+        "status": "Failed"
+      }
+    ]
+  },
+  "outstandingSnapshot": {
+    "title": "Outstanding Snapshot",
+    "totalDueLabel": "Total Due: ₹8,75,000",
+    "cards": [
+      { "id": "overdue", "label": "Overdue > 30 Days", "value": "₹5,20,000", "bgColor": "bg-red-50", "textColor": "text-danger" },
+      { "id": "due-week", "label": "Due This Week", "value": "₹3,55,000", "bgColor": "bg-amber-50", "textColor": "text-warning" }
+    ],
+    "auditTitle": "FINANCIAL AUDIT LOG",
+    "auditSubtitle": "Latest Update",
+    "auditLog": [
+      { "id": 1, "text": "Payment of ₹18,000 confirmed via UPI", "color": "bg-success" },
+      { "id": 2, "text": "Expense voucher of ₹45,000 approved for Lab Equipment", "color": "bg-info" },
+      { "id": 3, "text": "Marthandam Branch monthly audit log published", "color": "bg-primary-500" },
+      { "id": 4, "text": "Payment gateway alert: 1 transaction failed rectification", "color": "bg-danger" }
+    ],
+    "remindLabel": "Send Fee Reminders (24 Students)"
+  }
+}
