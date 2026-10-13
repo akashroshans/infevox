@@ -43,6 +43,7 @@ import {
   UserCheck,
   Layers,
   Award,
+  Download,
 } from 'lucide-react'
 
 const iconMap = {
@@ -90,6 +91,7 @@ const iconMap = {
   UserCheck,
   Layers,
   Award,
+  Download,
 }
 
 export const getIcon = (name) => iconMap[name] || null
@@ -139,4 +141,5 @@ export {
   UserCheck,
   Layers,
   Award,
+  Download,
 }
