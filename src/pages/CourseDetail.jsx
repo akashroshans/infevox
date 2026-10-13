@@ -1,4 +1,8 @@
 import { useMemo, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import dashboardData from '../data/dashboardData.json'
+import coursesData from '../data/coursesData.json'
+import courseDetailTemplate from '../data/courseDetailData.json'
 import { ChevronLeft, RefreshCw, User } from '../utils/icons'
 import { buildCourseDetail } from '../utils/buildCourseDetail'
 import CourseDetailHeader from '../components/CourseDetailHeader'
@@ -8,13 +12,45 @@ import CourseInfoCard from '../components/CourseInfoCard'
 import CurriculumBreakdown from '../components/CurriculumBreakdown'
 import CourseActivityCard from '../components/CourseActivityCard'
 
-export default function CourseDetail({ course, template, user, onBack, onEdit }) {
+export default function CourseDetail({ onEdit }) {
+  const { courseId } = useParams()
+  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('overview')
 
-  // Dynamic: every field on this page derives from the clicked course row
-  const detail = useMemo(() => buildCourseDetail(course, template), [course, template])
+  const course = useMemo(
+    () => coursesData.courses.find((c) => c.id === courseId),
+    [courseId]
+  )
 
-  if (!detail) return null
+  // Dynamic: every field on this page derives from the :courseId route param
+  const detail = useMemo(
+    () => buildCourseDetail(course, courseDetailTemplate),
+    [course]
+  )
+
+  const handleBack = () => navigate('/courses')
+
+  if (!course || !detail) {
+    return (
+      <div className="flex-1 p-8 overflow-y-auto">
+        <div className="bg-surface-card rounded-2xl border border-primary-50 shadow-sm p-12 text-center">
+          <p className="text-lg font-bold text-text-primary">Course not found</p>
+          <p className="text-sm text-text-muted mt-1">
+            No course matches id “{courseId}”.
+          </p>
+          <Link
+            to="/courses"
+            className="inline-flex items-center gap-2 mt-5 px-5 py-2 bg-primary-500 text-white text-sm font-semibold rounded-xl hover:bg-primary-600 transition-all duration-200"
+          >
+            <ChevronLeft size={15} />
+            Back to Courses
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  const { user } = dashboardData
 
   // Student / staff tab numbers come from the same dynamic detail object
   const enrolledCount = detail.tabs?.find((t) => t.id === 'students')?.count
@@ -25,7 +61,7 @@ export default function CourseDetail({ course, template, user, onBack, onEdit })
       {/* Top utility bar (matches app Header right side) */}
       <div className="flex items-center justify-between mb-4">
         <button
-          onClick={onBack}
+          onClick={handleBack}
           className="w-8 h-8 rounded-full bg-surface-card border border-primary-100 flex items-center justify-center text-text-secondary hover:bg-primary-50 hover:text-primary-500 transition-all duration-200 shadow-sm cursor-pointer"
         >
           <ChevronLeft size={16} />
@@ -50,7 +86,7 @@ export default function CourseDetail({ course, template, user, onBack, onEdit })
         status={detail.status}
         publication={detail.publication}
         subtitle={detail.subtitle}
-        onBack={onBack}
+        onBack={handleBack}
         onEdit={onEdit}
       />
 

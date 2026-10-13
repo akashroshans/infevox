@@ -1,17 +1,19 @@
+import { useNavigate } from 'react-router-dom'
 import dashboardData from '../data/dashboardData.json'
 import coursesData from '../data/coursesData.json'
 import Header from '../components/Header'
 import CourseStatCard from '../components/CourseStatCard'
 import CourseTable from '../components/CourseTable'
 
-export default function Courses({ onOpenDetail, onAdd }) {
+export default function Courses({ onAdd }) {
+  const navigate = useNavigate()
   const { user } = dashboardData
   const { stats, filters, courses } = coursesData
 
-  // Clicking a particular course row opens its dynamic detail page
+  // Clicking a particular course row routes to its dynamic detail endpoint
   const handleOpen = (course) => {
     if (!course) return
-    onOpenDetail?.(course)
+    navigate(`/courses/${course.id}`)
   }
 
   return (
@@ -33,7 +35,7 @@ export default function Courses({ onOpenDetail, onAdd }) {
       </div>
 
       {/* Filter + Table (reusable, data-driven from coursesData.json) */}
-      {/* Row click / view / edit opens that course's dynamic detail. Add is separate. */}
+      {/* Row click / view / edit routes to /courses/:courseId. Add is separate. */}
       <CourseTable
         courses={courses}
         filters={filters}
